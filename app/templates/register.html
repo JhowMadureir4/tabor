@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - TABOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .register-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #000;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #333;
+        }
+        .tabor-title {
+            font-size: 32px;
+            text-align: center;
+            color: #fff;
+            margin-top: 30px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabor-title">TABOR</div>
+
+    <div class="register-container">
+        <h2>Cadastro</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.foto.label(class_="form-label") }}
+                {{ form.foto(class_="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.nome.label(class_="form-label") }}
+                {{ form.nome(class_="form-control", placeholder="Nome completo") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.celular.label(class_="form-label") }}
+                {{ form.celular(class_="form-control", placeholder="(DDD) 91234-5678") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.idade.label(class_="form-label") }}
+                {{ form.idade(class_="form-control", placeholder="Idade") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.tabor.label(class_="form-label") }}
+                {{ form.tabor(class_="form-control", placeholder="Qual Tabor fez") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.email.label(class_="form-label") }}
+                {{ form.email(class_="form-control", placeholder="Seu e-mail") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.senha.label(class_="form-label") }}
+                {{ form.senha(class_="form-control", placeholder="Senha") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.confirmar_senha.label(class_="form-label") }}
+                {{ form.confirmar_senha(class_="form-control", placeholder="Confirmar senha") }}
+            </div>
+
+            <div class="d-grid">
+                {{ form.submit(class_="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</body>
+</html>
